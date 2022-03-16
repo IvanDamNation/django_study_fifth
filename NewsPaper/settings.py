@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django_filters',
 
     'news',
     'accounts',
@@ -118,6 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+
+DATE_FORMAT = 'd-m-Y'
 
 USE_I18N = True
 

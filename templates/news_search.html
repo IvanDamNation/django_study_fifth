@@ -7,14 +7,19 @@ News list
 
 {% block content %}
 
-<h1>News list:</h1>
+<h1>News search:</h1>
+
+<form method="GET">
+    {{ filter.form }}
+    <input type="submit" value="Find">
+</form>
+
     <div align="left">
-        <h3>News count: {{ news|length }}</h3>
         <hr>
-        {% for new in news %}
-            <p>{{ new.title|censor }} {{ new.dateCreation|date:'d-m-Y h:i'}}</p>
-            <p>{{ new.text|truncatechars:50|censor }}</p>
-            <a href="{{ new.pk }}">Read more...</a>
+        {% for obj in news %}
+            <p>{{ obj.title|censor }} {{ obj.dateCreation|date:'d-m-Y h:i'}}</p>
+            <p>{{ obj.text|truncatechars:50|censor }}</p>
+            <a href="../{{ obj.pk }}">Read more...</a>
             <hr>
         {% empty %}
             <p>No news here!</p>
@@ -24,8 +29,8 @@ News list
 {% if is_paginated %}
 
     {% if page_obj.has_previous %}
-        <a href="?page=1">First</a>
-        <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+        <a href="?{{ request.get_full_path|update_page:1}}">First</a>
+        <a href="?{{ request.get_full_path|update_page:page_obj.previous_page_number}}"><<<</a>
     {% endif %}
 
     {% for num in page_obj.paginator.page_range %}
