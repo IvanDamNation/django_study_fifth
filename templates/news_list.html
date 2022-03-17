@@ -9,7 +9,6 @@ News list
 
 <h1>News list:</h1>
     <div align="left">
-        <h3>News count: {{ news|length }}</h3>
         <hr>
         {% for new in news %}
             <p>{{ new.title|censor }} {{ new.dateCreation|date:'d-m-Y h:i'}}</p>
