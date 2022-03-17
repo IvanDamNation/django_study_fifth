@@ -64,6 +64,9 @@ class Post(models.Model):
     def __str__(self):
         return '{}'.format(self.title)
 
+    def get_absolute_url(self):
+        return f'/news/{self.pk}'
+
     class Meta:
         verbose_name = 'News'
         verbose_name_plural = 'News'

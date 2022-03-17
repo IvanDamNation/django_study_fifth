@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 
 from .models import Post, Category
 from .filters import PostFilter
@@ -51,3 +51,18 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'new.html'
     context_object_name = 'new'
+
+
+class PostUpdateView(UpdateView):
+    template_name = 'news_add.html'
+    form_class = PostForm
+
+    def get_object(self, **kwargs):
+        editing_news_key = self.kwargs.get('pk')
+        return Post.objects.get(pk=editing_news_key)
+
+
+class PostDeleteView(DeleteView):
+    template_name = 'news_delete.html'
+    queryset = Post.objects.all()
+    success_url = '/news/'
