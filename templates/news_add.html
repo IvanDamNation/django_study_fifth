@@ -11,8 +11,36 @@ News add
 <div align="left">
     <form method="POST">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Add news">
+        <table>
+            <tr>
+                <th>Field name</th>
+                <th>Content</th>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>{{ form.author }}</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>{{ form.title }}</td>
+            </tr>
+            <tr>
+                <td>Post Category</td>
+                <td>{{ form.categoryType }}</td>
+            </tr>
+            <tr>
+                <td>Theme</td>
+                <td>{{ form.postCategory }}</td>
+            </tr>
+            <tr>
+                <td>Text of the news</td>
+                <td>{{ form.text }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add news"></td>
+            </tr>
+        </table>
     </form>
 </div>
 
