@@ -1,15 +1,15 @@
 # django_study_third
 
-My third practice project in Django and HTML
+My fourth practice project in Django and HTML
 
-This is simple project on Django.
+This is simple (still) project on Django.
 
 Features:
-1) News list
-2) Access to the full version of news on it's own page
-3) Custom censor filter (for words in censor_list.txt)
+1) News search/filter
+2) Add, edit and delete news in client
+3) Reworked some previous parts
 
-Made for third practice exercise in chapter "Django and backend" for SkillFactory
+Made for fourth practice exercise in chapter "Django and backend" for SkillFactory
 
 
 Superuser:
