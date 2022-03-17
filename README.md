@@ -6,8 +6,9 @@ This is simple (still) project on Django.
 
 Features:
 1) News search/filter
-2) Add, edit and delete news in client
-3) Reworked some previous parts
+2) Pagination
+3) Add, edit and delete news in client
+4) Reworked some previous parts
 
 Made for fourth practice exercise in chapter "Django and backend" for SkillFactory
 
