@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o%1-l)y=rtsbm&$xirhe)ffzu#1q0*fify_ep46yanb)ka)pxs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'news',
     'accounts',
+    'protect',
     'fpages'
 
 ]
@@ -79,6 +80,9 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'NewsPaper.wsgi.application'
 
@@ -119,8 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
-
-DATE_FORMAT = 'd-m-Y'
 
 USE_I18N = True
 
