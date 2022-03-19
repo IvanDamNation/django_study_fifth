@@ -1,16 +1,13 @@
 # django_study_third
 
-My fourth practice project in Django and HTML
+My fifth practice project in Django and HTML
 
 This is simple (still) project on Django.
 
 Features:
-1) News search/filter
-2) Pagination
-3) Add, edit and delete news in client
-4) Reworked some previous parts
+1) *Add later*
 
-Made for fourth practice exercise in chapter "Django and backend" for SkillFactory
+Made for fifth practice exercise in chapter "Django and backend" for SkillFactory
 
 
 Superuser:
