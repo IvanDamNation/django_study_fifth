@@ -42,10 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'django_filters',
 
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'allauth.socialaccount.providers.google',
+
     'news',
     'accounts',
     'protect',
-    'fpages'
+    'fpages',
 
 ]
 
@@ -62,6 +68,19 @@ MIDDLEWARE = [
 
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
+
+ACCOUNT_FORMS = {'signup': 'accounts.forms.BasicSignupForm'}
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ROOT_URLCONF = 'NewsPaper.urls'
 
