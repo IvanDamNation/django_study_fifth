@@ -29,6 +29,10 @@ class Category(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
 
 class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)

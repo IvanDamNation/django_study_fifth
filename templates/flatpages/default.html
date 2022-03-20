@@ -47,12 +47,21 @@
                     </ul>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-link ms" href="/login/logout/">Log out</a>
+                    </li>
+                    <li>
+                        <a class="nav-link ms" href="/">Your page</a>
+                    </li>
+                    {% else %}
                     <li>
                         <a class="nav-link ms" href="/login/register/">Register</a>
                     </li>
                     <li>
                         <a class="nav-link ms" href="/login/">Log in</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
