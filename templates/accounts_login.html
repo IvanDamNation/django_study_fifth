@@ -6,6 +6,7 @@ Log in
 
 {% block content %}
 <h2> Log in on portal </h2>
+<div align="left">
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
     <table>
@@ -17,11 +18,19 @@ Log in
             <td>{{ form.password.label_tag }}</td>
             <td>{{ form.password }}</td>
         </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button>
+                    <a href="{% url 'signup' %}"> Sign in </a>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Log in"></td>
+        </tr>
     </table>
-
-    <input type="submit" value="Log in">
 </form>
-<button>
-    <a href="/register/"> Sign in </a>
-</button>
+</div>
 {% endblock content %}
