@@ -32,3 +32,8 @@ def update_page(full_path: str, page: int):
 
     except:
         return f'page={page}'
+
+
+@register.filter(name='is_author')
+def is_author(user):
+    return user.groups.filter(name='authors').exists()

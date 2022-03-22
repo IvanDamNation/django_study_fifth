@@ -14,7 +14,7 @@ News list
             <p>{{ new.title|censor }} {{ new.dateCreation|date:'d-m-Y h:i'}}</p>
             <p>{{ new.text|truncatechars:50|censor }}</p>
             <a href="{{ new.pk }}">Read more...</a>
-            {% if user.is_authenticated %}
+            {% if user|is_author %}
             <a href="{% url 'NewsEdit' new.pk%}">Edit</a>
             <a href="{% url 'NewsDelete' new.pk %}">Delete</a>
             {% endif %}

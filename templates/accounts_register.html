@@ -28,7 +28,7 @@ Registration
             </tr>
             <tr>
                 <td>Password</td>
-                <td>{{ form.password1 }}</td>
+                <td>{{ form.password1 }} At least 8 symbols with numbers and letters (with lowers and capitals)</td>
             </tr>
             <tr>
                 <td>Confirm password</td>
@@ -36,7 +36,12 @@ Registration
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Sign up"></td>
+                <td>
+                    <input type="submit" value="Sign up">
+                    <button>
+                        <a href="../../accounts/google/login/"> Sign up via Google</a>
+                    </button>
+                </td>
             </tr>
         </table>
     </form>
