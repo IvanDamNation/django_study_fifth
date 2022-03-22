@@ -11,6 +11,11 @@ class PostList(ListView):
     template_name = 'news_list.html'
     context_object_name = 'news'
     paginate_by = 5
+    # permission_required = ('news.add_post', 'news.change_post',)
+
+
+class PostPermission(PermissionRequiredMixin, PostList):
+    permission_required = ('news.add_post', 'news.change_post',)
 
 
 class PostSearch(PostList):
@@ -29,7 +34,7 @@ class PostSearch(PostList):
         }
 
 
-class PostAdd(PermissionRequiredMixin, PostList):
+class PostAdd(PostPermission, PostList):
     template_name = 'news_add.html'
     form_class = PostForm
     permission_required = ('news.add_post', 'news.change_post',)
@@ -55,7 +60,7 @@ class PostDetail(DetailView):
     context_object_name = 'new'
 
 
-class PostUpdateView(PermissionRequiredMixin, UpdateView):
+class PostUpdateView(PostPermission, UpdateView):
     template_name = 'news_add.html'
     form_class = PostForm
     permission_required = ('news.add_post', 'news.change_post',)
@@ -65,7 +70,7 @@ class PostUpdateView(PermissionRequiredMixin, UpdateView):
         return Post.objects.get(pk=editing_news_key)
 
 
-class PostDeleteView(PermissionRequiredMixin, DeleteView):
+class PostDeleteView(PostPermission, DeleteView):
     template_name = 'news_delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
