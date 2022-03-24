@@ -11,7 +11,6 @@ class PostList(ListView):
     template_name = 'news_list.html'
     context_object_name = 'news'
     paginate_by = 5
-    # permission_required = ('news.add_post', 'news.change_post',)
 
 
 class PostPermission(PermissionRequiredMixin, PostList):
