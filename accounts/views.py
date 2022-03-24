@@ -4,8 +4,8 @@ from django.contrib.auth.models import User, Group
 from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserFormUpd
-from .models import BaseRegisterForm
+from .forms import UserFormUpd, BaseRegisterForm
+# from .models import BaseRegisterForm
 
 
 class BaseRegisterView(CreateView):

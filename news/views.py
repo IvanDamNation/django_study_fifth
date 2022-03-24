@@ -14,7 +14,7 @@ class PostList(ListView):
 
 
 class PostPermission(PermissionRequiredMixin, PostList):
-    permission_required = ('news.add_post', 'news.change_post',)
+    permission_required = ('news.add_post', 'news.change_post', )
 
 
 class PostSearch(PostList):
@@ -36,7 +36,6 @@ class PostSearch(PostList):
 class PostAdd(PostPermission, PostList):
     template_name = 'news_add.html'
     form_class = PostForm
-    permission_required = ('news.add_post', 'news.change_post',)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -59,18 +58,19 @@ class PostDetail(DetailView):
     context_object_name = 'new'
 
 
-class PostUpdateView(PostPermission, UpdateView):
+class PostUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'news_add.html'
     form_class = PostForm
-    permission_required = ('news.add_post', 'news.change_post',)
+    permission_required = ('news.add_post', 'news.change_post', )
 
     def get_object(self, **kwargs):
         editing_news_key = self.kwargs.get('pk')
         return Post.objects.get(pk=editing_news_key)
 
 
-class PostDeleteView(PostPermission, DeleteView):
+class PostDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'news_delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
-    permission_required = ('news.add_post', 'news.change_post',)
+    permission_required = ('news.add_post', 'news.change_post', )
+
