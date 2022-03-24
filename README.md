@@ -2,7 +2,7 @@
 
 My fifth practice project in Django and HTML
 
-This is simple (not so now) project on Django.
+This is simple (not so already) project on Django.
 
 Features:
 1) Register/login/logout for users (with simple profiles)
