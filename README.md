@@ -11,7 +11,7 @@ Features:
 4) User can change profile or become author
 5) Permissions for authors (Make/change/delete posts)
 
-Please, install this pakages in your virtual environment for proper work:
+Please, install this packages in your virtual environment for proper work:
 1) django
 2) django-filter
 3) django-allauth
